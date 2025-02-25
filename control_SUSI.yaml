@@ -74,7 +74,7 @@ operation_params:
 
 preprocessing_params:
   generate_reference_trees:
-    - n_trees: 20
+    - n_trees: 10
       method: weibull
       debug: false
   #filter:
