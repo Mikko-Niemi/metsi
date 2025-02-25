@@ -34,26 +34,32 @@ operation_params:
     - model_set: 1
   report_collectives:
     - identifier: identifier
-      npv_1_percent: net_present_value.value[(net_present_value.interest_rate==1) & (net_present_value.time_point == 2050)]
-      npv_2_percent: net_present_value.value[(net_present_value.interest_rate==2) & (net_present_value.time_point == 2050)]
-      npv_3_percent: net_present_value.value[(net_present_value.interest_rate==3) & (net_present_value.time_point == 2050)]
-      npv_4_percent: net_present_value.value[(net_present_value.interest_rate==4) & (net_present_value.time_point == 2050)]
-      npv_5_percent: net_present_value.value[(net_present_value.interest_rate==5) & (net_present_value.time_point == 2050)]
+      npv_1_percent: net_present_value.value[(net_present_value.interest_rate==1) & (net_present_value.time_point == 40)]
+      npv_2_percent: net_present_value.value[(net_present_value.interest_rate==2) & (net_present_value.time_point == 40)]
+      npv_3_percent: net_present_value.value[(net_present_value.interest_rate==3) & (net_present_value.time_point == 40)]
+      npv_4_percent: net_present_value.value[(net_present_value.interest_rate==4) & (net_present_value.time_point == 40)]
+      npv_5_percent: net_present_value.value[(net_present_value.interest_rate==5) & (net_present_value.time_point == 40)]
 
       # stock volumes at state years
-      stock_2020: cross_cutting.volume_per_ha[(cross_cutting.source == "standing") & (cross_cutting.time_point == 2020)]
-      stock_2030: cross_cutting.volume_per_ha[(cross_cutting.source == "standing") & (cross_cutting.time_point == 2030)]
-      stock_2040: cross_cutting.volume_per_ha[(cross_cutting.source == "standing") & (cross_cutting.time_point == 2040)]
-      stock_2050: cross_cutting.volume_per_ha[(cross_cutting.source == "standing") & (cross_cutting.time_point == 2050)]
+      stock_0: cross_cutting.volume_per_ha[(cross_cutting.source == "standing") & (cross_cutting.time_point == 0)]
+      stock_4: cross_cutting.volume_per_ha[(cross_cutting.source == "standing") & (cross_cutting.time_point == 4)]
+      stock_10: cross_cutting.volume_per_ha[(cross_cutting.source == "standing") & (cross_cutting.time_point == 10)]
+      stock_20: cross_cutting.volume_per_ha[(cross_cutting.source == "standing") & (cross_cutting.time_point == 20)]
+      stock_30: cross_cutting.volume_per_ha[(cross_cutting.source == "standing") & (cross_cutting.time_point == 30)]
+      stock_40: cross_cutting.volume_per_ha[(cross_cutting.source == "standing") & (cross_cutting.time_point == 40)]
 
       # harvest volumes at event years
-      harvest_2035: cross_cutting.volume_per_ha[(cross_cutting.source == "harvested") & (cross_cutting.time_point == 2035)]
-      harvest_2045: cross_cutting.volume_per_ha[(cross_cutting.source == "harvested") & (cross_cutting.time_point == 2045)]
+      harvest_2: cross_cutting.volume_per_ha[(cross_cutting.source == "harvested") & (cross_cutting.time_point == 2)]
+      harvest_7: cross_cutting.volume_per_ha[(cross_cutting.source == "harvested") & (cross_cutting.time_point == 7)]
+      harvest_15: cross_cutting.volume_per_ha[(cross_cutting.source == "harvested") & (cross_cutting.time_point == 15)]
+      harvest_25: cross_cutting.volume_per_ha[(cross_cutting.source == "harvested") & (cross_cutting.time_point == 25)]
+      harvest_35: cross_cutting.volume_per_ha[(cross_cutting.source == "harvested") & (cross_cutting.time_point == 35)]
 
       # harvest volumes in period (by end year)
-      harvest_period_2030: cross_cutting.volume_per_ha[(cross_cutting.source == "harvested") & (cross_cutting.time_point >= 2020) & (cross_cutting.time_point < 2030)]
-      harvest_period_2040: cross_cutting.volume_per_ha[(cross_cutting.source == "harvested") & (cross_cutting.time_point >= 2030) & (cross_cutting.time_point < 2040)]
-      harvest_period_2050: cross_cutting.volume_per_ha[(cross_cutting.source == "harvested") & (cross_cutting.time_point >= 2040) & (cross_cutting.time_point < 2050)]
+      harvest_period_10: cross_cutting.volume_per_ha[(cross_cutting.source == "harvested") & (cross_cutting.time_point >= 0) & (cross_cutting.time_point < 10)]
+      harvest_period_20: cross_cutting.volume_per_ha[(cross_cutting.source == "harvested") & (cross_cutting.time_point >= 10) & (cross_cutting.time_point < 20)]
+      harvest_period_30: cross_cutting.volume_per_ha[(cross_cutting.source == "harvested") & (cross_cutting.time_point >= 20) & (cross_cutting.time_point < 30)]
+      harvest_period_40: cross_cutting.volume_per_ha[(cross_cutting.source == "harvested") & (cross_cutting.time_point >= 30) & (cross_cutting.time_point < 40)]
 
   report_period:
     - overall_volume: cross_cutting.volume_per_ha
@@ -68,7 +74,7 @@ operation_params:
 
 preprocessing_params:
   generate_reference_trees:
-    - n_trees: 10
+    - n_trees: 20
       method: weibull
       debug: false
   #filter:
@@ -100,11 +106,11 @@ operation_file_params:
 
 simulation_events:
   # we describe here objects with schedule for which time points they are active
-  - time_points: [2020]
+  - time_points: [0]
     generators:
       - sequence:
           - planting
-  - time_points: [2020, 2025, 2030, 2035, 2040, 2045, 2050]
+  - time_points: [0, 4, 6, 10, 20, 30, 40]
     generators:
       - sequence:
           - cross_cut_standing_trees
@@ -112,7 +118,7 @@ simulation_events:
           - calculate_npv
           - calculate_biomass
           - report_state
-  - time_points: [2035, 2045]
+  - time_points: [2, 7, 15, 25, 35]
     generators:
       - alternatives:
         - do_nothing
@@ -128,15 +134,15 @@ simulation_events:
       - sequence:
           - cross_cut_felled_trees
           - collect_felled_tree_properties
-  - time_points: [2020, 2030, 2040, 2050]
+  - time_points: [4, 10, 20, 30, 40]
     generators:
       - sequence:
           - report_period
-  - time_points: [2050]
+  - time_points: [40]
     generators:
       - sequence:
           - report_collectives
-  - time_points: [2020, 2025, 2030, 2035, 2040, 2045, 2050] # Grow at the end to transition assumed +5 years forwards
+  - time_points: [0, 4, 10, 20, 30, 40] # Grow at the end to transition assumed +5 years forwards
     generators:
       - sequence:
         - grow_acta
@@ -166,17 +172,23 @@ export:
       - npv_4_percent
       - npv_5_percent
       # stock volumes at state years
-      - stock_2020
-      - stock_2030
-      - stock_2040
-      - stock_2050
+      - stock_0
+      - stock_4
+      - stock_10
+      - stock_20
+      - stock_30
+      - stock_40
       # harvest volumes at event years
-      - harvest_2035
-      - harvest_2045
+      - harvest_2
+      - harvest_7
+      - harvest_15
+      - harvest_25
+      - harvest_35
       # harvest volumes in period (by end year)
-      - harvest_period_2030
-      - harvest_period_2040
-      - harvest_period_2050
+      - harvest_period_10
+      - harvest_period_20
+      - harvest_period_30
+      - harvest_period_40
   - format: rm_schedules_events_timber
     filename: timber_sums.txt
   - format: rm_schedules_events_trees
