@@ -110,7 +110,7 @@ simulation_events:
     generators:
       - sequence:
           - planting
-  - time_points: [0, 4, 6, 10, 20, 30, 40]
+  - time_points: [0, 4, 10, 20, 30, 40]
     generators:
       - sequence:
           - cross_cut_standing_trees
