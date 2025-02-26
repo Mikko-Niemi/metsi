@@ -66,7 +66,7 @@ operation_params:
   calculate_npv:
     - interest_rates: [1,2,3,4,5] # list of integers, '3' meaning 3%
   collect_standing_tree_properties:
-    - properties: [stems_per_ha, species, breast_height_diameter, height, breast_height_age, biological_age, saw_log_volume_reduction_factor]
+    - properties: [stems_per_ha, species, breast_height_diameter, height, biological_age, saw_log_volume_reduction_factor]
   collect_felled_tree_properties:
     - properties: [stems_per_ha, species, breast_height_diameter, height]
   planting:
