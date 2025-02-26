@@ -155,17 +155,17 @@ export:
   - format: J
     cvariables:
       - identifier
-      - year
-      - site_type_category
+      #- year
       - land_use_category
       - soil_peatland_category
+      - site_type_category
     xvariables:
       - identifier
-      - npv_1_percent
-      - npv_2_percent
-      - npv_3_percent
-      - npv_4_percent
-      - npv_5_percent
+      #- npv_1_percent
+      #- npv_2_percent
+      #- npv_3_percent
+      #- npv_4_percent
+      #- npv_5_percent
       # stock volumes at state years
       - stock_0
       - stock_4
@@ -180,10 +180,10 @@ export:
       - harvest_25
       - harvest_35
       # harvest volumes in period (by end year)
-      - harvest_period_10
-      - harvest_period_20
-      - harvest_period_30
-      - harvest_period_40
+      #- harvest_period_10
+      #- harvest_period_20
+      #- harvest_period_30
+      #- harvest_period_40
   - format: rm_schedules_events_timber
     filename: timber_sums.txt
   - format: rm_schedules_events_trees
