@@ -34,6 +34,7 @@ operation_params:
     - model_set: 1
   report_collectives:
     - identifier: identifier
+      area: area
 
       #npv_1_percent: net_present_value.value[(net_present_value.interest_rate==1) & (net_present_value.time_point == 40)]
       #npv_2_percent: net_present_value.value[(net_present_value.interest_rate==2) & (net_present_value.time_point == 40)]
@@ -63,7 +64,7 @@ operation_params:
   collect_standing_tree_properties:
     - properties: [stems_per_ha, species, breast_height_diameter, height, biological_age, saw_log_volume_reduction_factor]
   collect_felled_tree_properties:
-    - properties: [stems_per_ha, species, breast_height_diameter, height]
+    - properties: [stems_per_ha, species, breast_height_diameter, height, biological_age, saw_log_volume_reduction_factor]
   planting:
     - tree_count: 10
 
@@ -161,6 +162,7 @@ export:
       - site_type_category
     xvariables:
       - identifier
+      - area
       #- npv_1_percent
       #- npv_2_percent
       #- npv_3_percent
