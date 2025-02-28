@@ -58,7 +58,7 @@ operation_params:
       harvest_35: cross_cutting.volume_per_ha[(cross_cutting.source == "harvested") & (cross_cutting.time_point == 35)]
 
       # Testing biomass
-      biomass_0: reference_trees.biomasses_by_component_stand[(reference_trees.time_point == 0)]
+      biomass_0: reference_trees.stem_wood_biomass_1[(reference_trees.time_point == 0)]
       
   report_period:
     - overall_volume: cross_cutting.volume_per_ha
