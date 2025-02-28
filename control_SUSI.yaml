@@ -58,7 +58,7 @@ operation_params:
       harvest_35: cross_cutting.volume_per_ha[(cross_cutting.source == "harvested") & (cross_cutting.time_point == 35)]
 
       # biomass at state years
-      biomass_0: biomass.biomasses_by_component_stand[(cross_cutting.source == "standing") & (cross_cutting.time_point == 0)]
+      biomass_0: BiomassData.biomasses_by_component_stand[(BiomassData.time_point == 0)]
       
   report_period:
     - overall_volume: cross_cutting.volume_per_ha
