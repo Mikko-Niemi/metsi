@@ -56,9 +56,6 @@ operation_params:
       harvest_15: cross_cutting.volume_per_ha[(cross_cutting.source == "harvested") & (cross_cutting.time_point == 15)]
       harvest_25: cross_cutting.volume_per_ha[(cross_cutting.source == "harvested") & (cross_cutting.time_point == 25)]
       harvest_35: cross_cutting.volume_per_ha[(cross_cutting.source == "harvested") & (cross_cutting.time_point == 35)]
-
-      # biomass at state years
-      biomass_0: biomass_data.biomasses_by_component_stand[(biomass_data.time_point == 0)]
       
   report_period:
     - overall_volume: cross_cutting.volume_per_ha
@@ -184,8 +181,6 @@ export:
       - harvest_15
       - harvest_25
       - harvest_35
-      # biomass components at state years
-      - biomass_0
   - format: rm_schedules_events_timber
     filename: timber_sums.txt
   - format: rm_schedules_events_trees
