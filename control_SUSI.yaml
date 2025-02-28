@@ -184,6 +184,8 @@ export:
       - harvest_15
       - harvest_25
       - harvest_35
+      # biomass components at state years
+      - biomass_0
   - format: rm_schedules_events_timber
     filename: timber_sums.txt
   - format: rm_schedules_events_trees
