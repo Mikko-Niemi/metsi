@@ -10,6 +10,8 @@ app_configuration:
   run_modes: preprocess,simulate,postprocess,export
 
 run_constraints:
+  thinning:
+    minimum_time_interval: 15
   first_thinning:
     minimum_time_interval: 50
   clearcutting:
@@ -57,25 +59,8 @@ operation_params:
       harvest_25: cross_cutting.volume_per_ha[(cross_cutting.source == "harvested") & (cross_cutting.time_point == 25)]
       harvest_35: cross_cutting.volume_per_ha[(cross_cutting.source == "harvested") & (cross_cutting.time_point == 35)]
 
-  report_state:
-    - stock_vol_pine_log: cross_cutting.volume_per_ha[      (cross_cutting.species==1) & (cross_cutting.timber_grade==1) & (cross_cutting.source == "standing")]
-      stock_vol_spruce_log: cross_cutting.volume_per_ha[    (cross_cutting.species==2) & (cross_cutting.timber_grade==1) & (cross_cutting.source == "standing")]
-      stock_vol_birch_log: cross_cutting.volume_per_ha[     (cross_cutting.species==3) & (cross_cutting.timber_grade==1) & (cross_cutting.source == "standing")]
-      stock_vol_pine_pulp: cross_cutting.volume_per_ha[     (cross_cutting.species==1) & (cross_cutting.timber_grade==2) & (cross_cutting.source == "standing")]
-      stock_vol_spruce_pulp: cross_cutting.volume_per_ha[   (cross_cutting.species==2) & (cross_cutting.timber_grade==2) & (cross_cutting.source == "standing")]
-      stock_vol_birch_pulp: cross_cutting.volume_per_ha[    (cross_cutting.species==3) & (cross_cutting.timber_grade==2) & (cross_cutting.source == "standing")]
-      stock_vol_pine_energy: cross_cutting.volume_per_ha[   (cross_cutting.species==1) & (cross_cutting.timber_grade==3) & (cross_cutting.source == "standing")]
-      stock_vol_spruce_energy: cross_cutting.volume_per_ha[ (cross_cutting.species==2) & (cross_cutting.timber_grade==3) & (cross_cutting.source == "standing")]
-      stock_vol_birch_energy: cross_cutting.volume_per_ha[  (cross_cutting.species==3) & (cross_cutting.timber_grade==3) & (cross_cutting.source == "standing")]
-      timber_vol_pine_log: cross_cutting.volume_per_ha[     (cross_cutting.species==1) & (cross_cutting.timber_grade==1) & (cross_cutting.source == "harvested")]
-      timber_vol_spruce_log: cross_cutting.volume_per_ha[   (cross_cutting.species==2) & (cross_cutting.timber_grade==1) & (cross_cutting.source == "harvested")]
-      timber_vol_birch_log: cross_cutting.volume_per_ha[    (cross_cutting.species==3) & (cross_cutting.timber_grade==1) & (cross_cutting.source == "harvested")]
-      timber_vol_pine_pulp: cross_cutting.volume_per_ha[    (cross_cutting.species==1) & (cross_cutting.timber_grade==2) & (cross_cutting.source == "harvested")]
-      timber_vol_spruce_pulp: cross_cutting.volume_per_ha[  (cross_cutting.species==2) & (cross_cutting.timber_grade==2) & (cross_cutting.source == "harvested")]
-      timber_vol_birch_pulp: cross_cutting.volume_per_ha[   (cross_cutting.species==3) & (cross_cutting.timber_grade==2) & (cross_cutting.source == "harvested")]
-      timber_vol_pine_energy: cross_cutting.volume_per_ha[  (cross_cutting.species==1) & (cross_cutting.timber_grade==3) & (cross_cutting.source == "harvested")]
-      timber_vol_spruce_energy: cross_cutting.volume_per_ha[(cross_cutting.species==2) & (cross_cutting.timber_grade==3) & (cross_cutting.source == "harvested")]
-      timber_vol_birch_energy: cross_cutting.volume_per_ha[ (cross_cutting.species==3) & (cross_cutting.timber_grade==3) & (cross_cutting.source == "harvested")]
+  report biomass:
+    - stem_wood_0: stem_wood
       
   report_period:
     - overall_volume: cross_cutting.volume_per_ha
