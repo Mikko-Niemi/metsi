@@ -46,7 +46,7 @@ operation_params:
 
       # stock volumes at state years
       stock_0: cross_cutting.volume_per_ha[(cross_cutting.source == "standing") & (cross_cutting.time_point == 0)]
-      stock_4: cross_cutting.volume_per_ha[(cross_cutting.source == "standing") & (cross_cutting.time_point == 4)]
+      stock_5: cross_cutting.volume_per_ha[(cross_cutting.source == "standing") & (cross_cutting.time_point == 5)]
       stock_10: cross_cutting.volume_per_ha[(cross_cutting.source == "standing") & (cross_cutting.time_point == 10)]
       stock_20: cross_cutting.volume_per_ha[(cross_cutting.source == "standing") & (cross_cutting.time_point == 20)]
       stock_30: cross_cutting.volume_per_ha[(cross_cutting.source == "standing") & (cross_cutting.time_point == 30)]
@@ -60,8 +60,8 @@ operation_params:
       harvest_35: cross_cutting.volume_per_ha[(cross_cutting.source == "harvested") & (cross_cutting.time_point == 35)]
 
       # biomass components at state years
-      bm_stem_0: calculate_biomass.stem[calculate_biomass.time_point == 0]
-      bm_stem_5: calculate_biomass.stem[calculate_biomass.time_point == 5]
+      #bm_stem_0: calculate_biomass.stem[calculate_biomass.time_point == 0]
+      #bm_stem_5: calculate_biomass.stem[calculate_biomass.time_point == 5]
       
   report_period:
     - overall_volume: cross_cutting.volume_per_ha
@@ -112,7 +112,7 @@ simulation_events:
     generators:
       - sequence:
           - planting
-  - time_points: [0, 4, 10, 20, 30, 40]
+  - time_points: [0, 5, 10, 20, 30, 40]
     generators:
       - sequence:
           - cross_cut_standing_trees
@@ -120,7 +120,7 @@ simulation_events:
           - calculate_npv
           - calculate_biomass
           - report_state
-  - time_points: [2, 7, 15, 25, 35]
+  - time_points: [0, 5, 10, 20, 30]
     generators:
       - alternatives:
         - do_nothing
@@ -136,7 +136,7 @@ simulation_events:
       - sequence:
           - cross_cut_felled_trees
           - collect_felled_tree_properties
-  - time_points: [4, 10, 20, 30, 40]
+  - time_points: [5, 10, 20, 30, 40]
     generators:
       - sequence:
           - report_period
@@ -144,7 +144,7 @@ simulation_events:
     generators:
       - sequence:
           - report_collectives
-  - time_points: [0, 4, 10, 20, 30, 40] # Grow at the end to transition assumed +5 years forwards
+  - time_points: [0, 5, 10, 15, 20, 25, 30, 35] # Grow at the end to transition assumed +5 years forwards
     generators:
       - sequence:
         - grow_acta
@@ -188,8 +188,8 @@ export:
       - harvest_25
       - harvest_35
       # biomass components at state years
-      - bm_stem_0
-      - bm_stem_5
+      #- bm_stem_0
+      #- bm_stem_5
   - format: rm_schedules_events_timber
     filename: timber_sums.txt
   - format: rm_schedules_events_trees
