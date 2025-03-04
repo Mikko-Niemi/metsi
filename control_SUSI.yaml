@@ -48,16 +48,19 @@ operation_params:
       stock_0: cross_cutting.volume_per_ha[(cross_cutting.source == "standing") & (cross_cutting.time_point == 0)]
       stock_5: cross_cutting.volume_per_ha[(cross_cutting.source == "standing") & (cross_cutting.time_point == 5)]
       stock_10: cross_cutting.volume_per_ha[(cross_cutting.source == "standing") & (cross_cutting.time_point == 10)]
+      stock_15: cross_cutting.volume_per_ha[(cross_cutting.source == "standing") & (cross_cutting.time_point == 15)]
       stock_20: cross_cutting.volume_per_ha[(cross_cutting.source == "standing") & (cross_cutting.time_point == 20)]
+      stock_25: cross_cutting.volume_per_ha[(cross_cutting.source == "standing") & (cross_cutting.time_point == 25)]
       stock_30: cross_cutting.volume_per_ha[(cross_cutting.source == "standing") & (cross_cutting.time_point == 30)]
+      stock_35: cross_cutting.volume_per_ha[(cross_cutting.source == "standing") & (cross_cutting.time_point == 35)]
       stock_40: cross_cutting.volume_per_ha[(cross_cutting.source == "standing") & (cross_cutting.time_point == 40)]
 
       # harvest volumes at event years
-      harvest_2: cross_cutting.volume_per_ha[(cross_cutting.source == "harvested") & (cross_cutting.time_point == 2)]
-      harvest_7: cross_cutting.volume_per_ha[(cross_cutting.source == "harvested") & (cross_cutting.time_point == 7)]
-      harvest_15: cross_cutting.volume_per_ha[(cross_cutting.source == "harvested") & (cross_cutting.time_point == 15)]
-      harvest_25: cross_cutting.volume_per_ha[(cross_cutting.source == "harvested") & (cross_cutting.time_point == 25)]
-      harvest_35: cross_cutting.volume_per_ha[(cross_cutting.source == "harvested") & (cross_cutting.time_point == 35)]
+      harvest_0: cross_cutting.volume_per_ha[(cross_cutting.source == "harvested") & (cross_cutting.time_point == 0)]
+      harvest_5: cross_cutting.volume_per_ha[(cross_cutting.source == "harvested") & (cross_cutting.time_point == 5)]
+      harvest_10: cross_cutting.volume_per_ha[(cross_cutting.source == "harvested") & (cross_cutting.time_point == 10)]
+      harvest_20: cross_cutting.volume_per_ha[(cross_cutting.source == "harvested") & (cross_cutting.time_point == 20)]
+      harvest_30: cross_cutting.volume_per_ha[(cross_cutting.source == "harvested") & (cross_cutting.time_point == 30)]
 
       # biomass components at state years
       #bm_stem_0: calculate_biomass.stem[calculate_biomass.time_point == 0]
@@ -112,7 +115,7 @@ simulation_events:
     generators:
       - sequence:
           - planting
-  - time_points: [0, 5, 10, 20, 30, 40]
+  - time_points: [0, 5, 10, 15, 20, 25, 30, 35, 40]
     generators:
       - sequence:
           - cross_cut_standing_trees
@@ -176,17 +179,20 @@ export:
       #- npv_5_percent
       # stock volumes at state years
       - stock_0
-      - stock_4
+      - stock_5
       - stock_10
+      - stock_15
       - stock_20
+      - stock_25
       - stock_30
+      - stock_35
       - stock_40
       # harvest volumes at event years
-      - harvest_2
-      - harvest_7
-      - harvest_15
-      - harvest_25
-      - harvest_35
+      - harvest_0
+      - harvest_5
+      - harvest_10
+      - harvest_20
+      - harvest_30
       # biomass components at state years
       #- bm_stem_0
       #- bm_stem_5
