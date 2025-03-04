@@ -63,8 +63,8 @@ operation_params:
       harvest_30: cross_cutting.volume_per_ha[(cross_cutting.source == "harvested") & (cross_cutting.time_point == 30)]
 
       # biomass components at state years
-      bm_stem_0: calculate_biomass.stem[calculate_biomass.time_point == 0]
-      bm_stem_5: calculate_biomass.stem[calculate_biomass.time_point == 5]
+      bm_stem_0: calculate_biomass.stem_wood[calculate_biomass.time_point == 0]
+      bm_stem_5: calculate_biomass.stem_wood[calculate_biomass.time_point == 5]
       
   report_period:
     - overall_volume: cross_cutting.volume_per_ha
