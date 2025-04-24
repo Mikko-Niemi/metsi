@@ -216,7 +216,8 @@ simulation_events:
   - time_points: [0, 5, 10, 15, 20, 25, 30, 35] # Grow at the end to transition assumed +5 years forwards
     generators:
       - sequence:
-        - grow_acta
+        - grow_continuous
+        #- grow_acta
         #- grow_motti
 
 post_processing:
