@@ -75,7 +75,6 @@ def grow_diameter_and_height(
         TS = TemperatureSum
     except NameError:
         TS = 1300
-    print(TS)
     
     # Tree attributes
     trees = stand.reference_trees
