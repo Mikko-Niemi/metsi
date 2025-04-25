@@ -85,7 +85,7 @@ def grow_diameter_and_height(
     hs_predicted = hs
     sps = [t.species for t in trees]
     stems = [t.stems_per_ha for t in trees]
-    stems_predicted = stems * 0.97   # JUST TESTING!!
+    stems_predicted = stems
     gs = [t.stems_per_ha*math.pi*(0.01*0.5*d)**2 for t,d in zip(trees,ds)]
     G = sum(gs)
     D_spruces = [ds[tree] for tree,sp in enumerate(sps) if sp==TreeSpecies.SPRUCE]
