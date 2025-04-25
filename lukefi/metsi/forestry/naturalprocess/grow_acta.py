@@ -100,9 +100,6 @@ def grow_diameter_and_height(
         BAL = sum([gs[tree] for tree,diam in enumerate(ds) if diam > D_current])
         BAL_spruces = sum([G_spruces[tree] for tree,diam in enumerate(D_spruces) if diam > D_current])
         BAL_spruces_broads = sum([G_spruces_broads[tree] for tree,diam in enumerate(D_spruces_broads) if diam > D_current])
-        print(BAL)
-        print(BAL_spruces)
-        print(BAL_spruces_broads)
     
         if hs[i] >= 1.3:
             ds_predicted[i] += Pukkala_diameter_growth_by_species(t.species, D_current, G, BAL, BAL_spruces, BAL_spruces_broads, TS, sitetype, landclass)
