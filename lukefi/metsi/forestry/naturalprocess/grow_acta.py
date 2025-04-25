@@ -1,7 +1,7 @@
 from collections import defaultdict
 import math
 from statistics import median
-from lukefi.metsi.data.model import ReferenceTree, TreeSpecies
+from lukefi.metsi.data.model import ForestStand, ReferenceTree, TreeSpecies, SiteType, SoilPeatlandCategory
 from lukefi.metsi.forestry.preprocessing.naslund import naslund_height
 
 
