@@ -147,14 +147,14 @@ def grow_diameter_and_height(
         if hs[i] >= 1.3:
             ds_predicted[i] += Pukkala_diameter_growth_by_species(t.species, D_current, G, BAL, BAL_spruces, BAL_spruces_broads, TS, sitetype, landclass)
             height_0 = naslund_height(D_current, t.species)
-            if height_0 is None:
-                height_0 = 0
             height_5 = naslund_height(ds_predicted[i], t.species)
             hs_predicted[i] += (height_5 - height_0)
             stems_predicted[i] = stems[i] * Pukkala_survival_by_species(t.species, D_current, BAL, BAL_pines, BAL_spruces, BAL_spruces_broads, landclass)
         else:
-            ### Mitä tehdä alle 1,3 metrin pituisille puille? !!!
-            ds_predicted[i] = 1
-            hs_predicted[i] = 1.3
+            ds_predicted[i] += Pukkala_diameter_growth_by_species(t.species, 1.0, G, BAL, BAL_spruces, BAL_spruces_broads, TS, sitetype, landclass)
+            height_0 = naslund_height(1.0, t.species)
+            height_5 = naslund_height(ds_predicted[i], t.species)
+            hs_predicted[i] += (height_5 - height_0)
+            stems_predicted[i] = stems[i] * Pukkala_survival_by_species(t.species, 1.0, BAL, BAL_pines, BAL_spruces, BAL_spruces_broads, landclass)
             
     return ds_predicted, hs_predicted, stems_predicted
