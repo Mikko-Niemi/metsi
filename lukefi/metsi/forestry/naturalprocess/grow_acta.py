@@ -20,7 +20,7 @@ def Pukkala_diameter_growth_by_species(
             'ln_G_1':[-0.2027, -0.1875, -0.3864], 'BAL_Total':[-0.1236, -0.0563, 0], 'BAL_Spruce':[0, -0.0870, 0], \
             'BAL_Spruce_Broadleaf':[0, 0, -0.0545], 'ln_TS':[1.1198, 1.9747, 1.3163], 'Peat':[-0.2425, 0, 0], 'd_Pendula_or_Aspen':[0, 0, 0.0253], \
             'Fertility':{'Herb-rich':[0.1438,0.2688,0.2566], 'Mesic':[0,0,0], 'Sub-xeric':[-0.1754,-0.2145,-0.2256], 'Xeric':[-0.5163,-0.6179,-0.3237]} }
-    
+
     # Re-codings
     if spe == TreeSpecies.PINE:
         spi = 0
@@ -28,7 +28,7 @@ def Pukkala_diameter_growth_by_species(
         spi = 1
     else:
         spi = 2
-    
+
     if sitetype == (SiteType.VERY_RICH_SITE or SiteType.RICH_SITE):
         site = 'Herb-rich'
     elif sitetype == SiteType.DAMP_SITE:
@@ -37,12 +37,12 @@ def Pukkala_diameter_growth_by_species(
         site = 'Sub-xeric'
     else:
         site = 'Xeric'
-    
+
     if soilpeat != SoilPeatlandCategory.MINERAL_SOIL:
         peat = 1
     else:
         peat = 0
-    
+
     ln_D_increment = (D_param['Intercept'][spi]
              + D_param['sqrt_d'][spi] * math.sqrt(initialDiameter)
              + D_param['d'][spi] * initialDiameter
@@ -69,9 +69,9 @@ def Pukkala_survival_by_species(
 ) -> float:
     
     # Parameters (Pukkala et al. 2021):                                           
-    S_param = { 'Intercept':[4.1505, 9.6649, 3.6655], 'sqrt_d':[3.1513, 1.0157, 1.0650], 'd':[-0.3575, -0.1577, -0.1509], \
-            'BAL_Total':[-0.4001, 0, 0], 'BAL_Pine':[0, 0, -0.0326], 'BAL_Spruce':[0, -0.3244, 0], 'BAL_Spruce_Broadleaf':[0, 0, -0.2768], \
-            'Peat':[-0.3813, -0.7366, -0.3884], 'Aspen':[0, 0, -0.0562], 'Birch':[0, 0, 1.0780] }
+    S_param = { 'Intercept':[1.41223, 5.01677, 1.60895], 'sqrt_d':[1.8852, 0.36902, 0.71578], 'd':[-0.21317, -0.07504, -0.08236], \
+            'BAL_Total':[-0.25637, 0, 0], 'BAL_Pine':[0, 0, -0.04814], 'BAL_Spruce':[0, -0.2319, 0], 'BAL_Spruce_Broadleaf':[0, 0, -0.13481], \
+            'Peat':[-0.39878, -0.47361, -0.31789], 'Aspen':[0, 0, 0.56311], 'Birch':[0, 0, 1.40145] }
     
     # Re-codings
     if spe == TreeSpecies.PINE:
@@ -156,5 +156,5 @@ def grow_diameter_and_height(
             ### Mitä tehdä alle 1,3 metrin pituisille puille? !!!
             ds_predicted[i] = 1
             hs_predicted[i] = 1.3
-    
+            
     return ds_predicted, hs_predicted, stems_predicted
