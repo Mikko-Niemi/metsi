@@ -38,11 +38,12 @@ operation_params:
     - identifier: identifier
       area: area
 
-      #npv_1_percent: net_present_value.value[(net_present_value.interest_rate==1) & (net_present_value.time_point == 40)]
-      #npv_2_percent: net_present_value.value[(net_present_value.interest_rate==2) & (net_present_value.time_point == 40)]
-      #npv_3_percent: net_present_value.value[(net_present_value.interest_rate==3) & (net_present_value.time_point == 40)]
-      #npv_4_percent: net_present_value.value[(net_present_value.interest_rate==4) & (net_present_value.time_point == 40)]
-      #npv_5_percent: net_present_value.value[(net_present_value.interest_rate==5) & (net_present_value.time_point == 40)]
+      # net present values
+      npv_1_percent: net_present_value.value[(net_present_value.interest_rate==1) & (net_present_value.time_point == 40)]
+      npv_2_percent: net_present_value.value[(net_present_value.interest_rate==2) & (net_present_value.time_point == 40)]
+      npv_3_percent: net_present_value.value[(net_present_value.interest_rate==3) & (net_present_value.time_point == 40)]
+      npv_4_percent: net_present_value.value[(net_present_value.interest_rate==4) & (net_present_value.time_point == 40)]
+      npv_5_percent: net_present_value.value[(net_present_value.interest_rate==5) & (net_present_value.time_point == 40)]
 
       # stock volumes at state years
       stock_0: cross_cutting.volume_per_ha[(cross_cutting.source == "standing") & (cross_cutting.time_point == 0)]
@@ -238,11 +239,11 @@ export:
     xvariables:
       - identifier
       - area
-      #- npv_1_percent
-      #- npv_2_percent
-      #- npv_3_percent
-      #- npv_4_percent
-      #- npv_5_percent
+      - npv_1_percent
+      - npv_2_percent
+      - npv_3_percent
+      - npv_4_percent
+      - npv_5_percent
       # stock volumes at state years
       - stock_0
       - stock_5
