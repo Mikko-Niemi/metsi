@@ -206,7 +206,7 @@ simulation_events:
           - calculate_npv
           - calculate_biomass
           - report_state
-  - time_points: [5, 10, 20, 30, 40]
+  - time_points: [0, 5, 10, 20, 30, 40]
     generators:
       - sequence:
           - report_period
