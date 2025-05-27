@@ -165,6 +165,8 @@ preprocessing_operations:
   #- generate_sapling_trees_from_sapling_strata
 
 operation_file_params:
+  even_thinning:
+    thinning_limits: data/parameter_files/Thin_Keskinen_Suomi.txt
   thinning_from_above:
     thinning_limits: data/parameter_files/Thin.txt
   cross_cut_felled_trees:
