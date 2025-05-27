@@ -17,55 +17,55 @@ from lukefi.metsi.domain.forestry_operations.thinning_limits import SiteTypeKey,
 
 RENEWAL_DIAMETERS = {
         SiteTypeKey.OMT: {
-            SpeciesKey.PINE:26,
-            SpeciesKey.SPRUCE:28,
-            SpeciesKey.SILVER_BIRCH:23,
-            SpeciesKey.DOWNY_BIRCH:23,
+            SpeciesKey.PINE: 26,
+            SpeciesKey.SPRUCE: 28,
+            SpeciesKey.SILVER_BIRCH: 23,
+            SpeciesKey.DOWNY_BIRCH: 23,
         },
         SiteTypeKey.MT: {
-            SpeciesKey.PINE:26,
-            SpeciesKey.SPRUCE:26,
-            SpeciesKey.SILVER_BIRCH:23,
-            SpeciesKey.DOWNY_BIRCH:23,
+            SpeciesKey.PINE: 26,
+            SpeciesKey.SPRUCE: 26,
+            SpeciesKey.SILVER_BIRCH: 23,
+            SpeciesKey.DOWNY_BIRCH: 23,
         },
         SiteTypeKey.VT: {
             SpeciesKey.PINE: 25,
             SpeciesKey.SPRUCE: 24,
-            SpeciesKey.SILVER_BIRCH:25,
-            SpeciesKey.DOWNY_BIRCH:21,
+            SpeciesKey.SILVER_BIRCH: 21,
+            SpeciesKey.DOWNY_BIRCH: 21,
         },
         SiteTypeKey.CT: {
-            SpeciesKey.PINE:22,
+            SpeciesKey.PINE: 23,
             SpeciesKey.SPRUCE: 22,
-            SpeciesKey.SILVER_BIRCH: 22,
-            SpeciesKey.DOWNY_BIRCH:19
+            SpeciesKey.SILVER_BIRCH: 19,
+            SpeciesKey.DOWNY_BIRCH: 19
         }
     }
 
 RENEWAL_AGES = {
         SiteTypeKey.OMT: {
-            SpeciesKey.PINE:70,
-            SpeciesKey.SPRUCE:60,
-            SpeciesKey.SILVER_BIRCH:60,
-            SpeciesKey.DOWNY_BIRCH:50,
+            SpeciesKey.PINE: 80,
+            SpeciesKey.SPRUCE: 70,
+            SpeciesKey.SILVER_BIRCH: 60,
+            SpeciesKey.DOWNY_BIRCH: 50,
         },
         SiteTypeKey.MT: {
-            SpeciesKey.PINE:70,
-            SpeciesKey.SPRUCE:70,
-            SpeciesKey.SILVER_BIRCH:60,
-            SpeciesKey.DOWNY_BIRCH:50,
+            SpeciesKey.PINE: 80,
+            SpeciesKey.SPRUCE: 80,
+            SpeciesKey.SILVER_BIRCH: 60,
+            SpeciesKey.DOWNY_BIRCH: 50,
         },
         SiteTypeKey.VT: {
-            SpeciesKey.PINE: 80,
-            SpeciesKey.SPRUCE: 60,
-            SpeciesKey.SILVER_BIRCH:60,
-            SpeciesKey.DOWNY_BIRCH:50,
+            SpeciesKey.PINE: 90,
+            SpeciesKey.SPRUCE: 80,
+            SpeciesKey.SILVER_BIRCH: 60,
+            SpeciesKey.DOWNY_BIRCH: 50,
         },
         SiteTypeKey.CT: {
-            SpeciesKey.PINE:90,
-            SpeciesKey.SPRUCE: 60,
+            SpeciesKey.PINE: 100,
+            SpeciesKey.SPRUCE: 80,
             SpeciesKey.SILVER_BIRCH: 60,
-            SpeciesKey.DOWNY_BIRCH:50
+            SpeciesKey.DOWNY_BIRCH: 50
         }
     }
 
