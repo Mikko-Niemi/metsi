@@ -153,7 +153,7 @@ def grow_diameter_and_height(
         else:
             ds_predicted[i] += Pukkala_diameter_growth_by_species(t.species, 1.0, G, BAL, BAL_spruces, BAL_spruces_broads, TS, sitetype, landclass)
             height_0 = naslund_height(1.0, t.species)
-            height_5 = naslund_height(ds_predicted[i], t.species)
+            height_5 = naslund_height(1.0 + ds_predicted[i], t.species)
             hs_predicted[i] += (height_5 - height_0)
             stems_predicted[i] = stems[i] * Pukkala_survival_by_species(t.species, 1.0, BAL, BAL_pines, BAL_spruces, BAL_spruces_broads, landclass)
             
