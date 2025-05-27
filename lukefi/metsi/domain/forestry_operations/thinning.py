@@ -49,8 +49,8 @@ def first_thinning(input: OpTuple[ForestStand], **operation_parameters) -> OpTup
     epsilon = operation_parameters['e']
     hdom_0 = operation_parameters['dominant_height_lower_bound']
     hdom_n = operation_parameters['dominant_height_upper_bound']
-    hdom_0 = 11 if hdom_0 is None else hdom_0
-    hdom_n = 16 if hdom_n is None else hdom_n
+    hdom_0 = 12.5 if hdom_0 is None else hdom_0
+    hdom_n = 15.5 if hdom_n is None else hdom_n
 
     residue_stems = resolve_first_thinning_residue(stand)
 
