@@ -8,8 +8,8 @@ from lukefi.metsi.domain.collected_types import PriceableOperationInfo
 
 DEFAULT_INSTRUCTIONS = {
         SiteTypeKey.OMT: {
-            'species': 1,
-            'stems/ha': 2000,
+            'species': 2,
+            'stems/ha': 1600,
             'soil preparation': 3
         },
         SiteTypeKey.MT: {
