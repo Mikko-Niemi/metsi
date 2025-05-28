@@ -167,15 +167,15 @@ preprocessing_operations:
 operation_file_params:
   even_thinning:
     thinning_limits: data/parameter_files/Thin_Keskinen_Suomi.txt
-  thinning_from_above:
-    thinning_limits: data/parameter_files/Thin.txt
+  #thinning_from_above:
+  #  thinning_limits: data/parameter_files/Thin.txt
   cross_cut_felled_trees:
     timber_price_table: data/parameter_files/timber_price_table.csv
   cross_cut_standing_trees:
     timber_price_table: data/parameter_files/timber_price_table.csv
   clearcutting:
-    clearcutting_limits_ages: data/parameter_files/renewal_ages_southernFI.txt
-    clearcutting_limits_diameters: data/parameter_files/renewal_diameters_southernFI.txt
+    clearcutting_limits_ages: data/parameter_files/renewal_ages_centralFI.txt
+    clearcutting_limits_diameters: data/parameter_files/renewal_diameters_centralFI.txt
   planting:
     planting_instructions: data/parameter_files/planting_instructions.txt
   calculate_npv:
