@@ -179,7 +179,7 @@ operation_file_params:
   planting:
     planting_instructions: data/parameter_files/planting_instructions.txt
   calculate_npv:
-    land_values: data/parameter_files/land_values_per_site_type_and_interest_rate.json
+    land_values: data/parameter_files/land_values_per_site_type_and_interest_rate_TS1200.json
     renewal_costs: data/parameter_files/renewal_operation_pricing.csv
 
 simulation_events:
