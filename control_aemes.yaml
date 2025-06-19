@@ -184,7 +184,7 @@ operation_file_params:
 
 simulation_events:
   # we describe here objects with schedule for which time points they are active
-  - time_points: [0, 5, 10, 20, 30]
+  - time_points: [0, 5, 10, 15]
     generators:
       - alternatives:
         - do_nothing
