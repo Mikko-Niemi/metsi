@@ -236,7 +236,7 @@ control_structure = {
         {
             "format": "J",
             "cvariables": [
-                "identifier", "year", "site_type_category", "land_use_category", "soil_peatland_category"
+                "identifier", "site_type_category", "land_use_category", "soil_peatland_category"
             ],
             "xvariables": [
                 "identifier", "area", "npv_1_percent", "npv_2_percent", "npv_3_percent", "npv_4_percent", "npv_5_percent",
