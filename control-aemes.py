@@ -169,7 +169,23 @@ control_structure = {
                 "harvest_10": "cross_cutting.volume_per_ha[(cross_cutting.source == 'harvested') & "
                 "(cross_cutting.time_point == 10)]",
                 "harvest_15": "cross_cutting.volume_per_ha[(cross_cutting.source == 'harvested') & "
-                "(cross_cutting.time_point == 15)]"
+                "(cross_cutting.time_point == 15)]",
+                "bm_stem_wood_0": "calculate_biomass.stem_wood[calculate_biomass.time_point == 0]",
+                "bm_stem_bark_0": "calculate_biomass.stem_bark[calculate_biomass.time_point == 0]",
+                "bm_stem_waste_0": "calculate_biomass.stem_waste[calculate_biomass.time_point == 0]",
+                "bm_living_branches_0": "calculate_biomass.living_branches[calculate_biomass.time_point == 0]",
+                "bm_dead_branches_0": "calculate_biomass.dead_branches[calculate_biomass.time_point == 0]",
+                "bm_foliage_0": "calculate_biomass.foliage[calculate_biomass.time_point == 0]",
+                "bm_stumps_0": "calculate_biomass.stumps[calculate_biomass.time_point == 0]",
+                "bm_roots_0": "calculate_biomass.roots[calculate_biomass.time_point == 0]",
+                "bm_stem_wood_5": "calculate_biomass.stem_wood[calculate_biomass.time_point == 5]",
+                "bm_stem_bark_5": "calculate_biomass.stem_bark[calculate_biomass.time_point == 5]",
+                "bm_stem_waste_5": "calculate_biomass.stem_waste[calculate_biomass.time_point == 5]",
+                "bm_living_branches_5": "calculate_biomass.living_branches[calculate_biomass.time_point == 5]",
+                "bm_dead_branches_5": "calculate_biomass.dead_branches[calculate_biomass.time_point == 5]",
+                "bm_foliage_5": "calculate_biomass.foliage[calculate_biomass.time_point == 5]",
+                "bm_stumps_5": "calculate_biomass.stumps[calculate_biomass.time_point == 5]",
+                "bm_roots_5": "calculate_biomass.roots[calculate_biomass.time_point == 5]"
             }
         ],
         report_period: [
@@ -241,7 +257,11 @@ control_structure = {
             "xvariables": [
                 "identifier", "area", "npv_1_percent", "npv_2_percent", "npv_3_percent", "npv_4_percent", "npv_5_percent",
                 "stock_0", "stock_5", "stock_10", "stock_15","stock_20", "stock_25", "stock_30", "stock_35", "stock_40",
-                "harvest_0", "harvest_5", "harvest_10", "harvest_15"
+                "harvest_0", "harvest_5", "harvest_10", "harvest_15",
+                "bm_stem_wood_0", "bm_stem_bark_0", "bm_stem_waste_0", "bm_living_branches_0",
+                "bm_dead_branches_0", "bm_foliage_0", "bm_stumps_0", "bm_roots_0",
+                "bm_stem_wood_5", "bm_stem_bark_5", "bm_stem_waste_5", "bm_living_branches_5",
+                "bm_dead_branches_5", "bm_foliage_5", "bm_stumps_5", "bm_roots_5"
             ]
         },
         {
