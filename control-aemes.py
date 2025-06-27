@@ -263,7 +263,7 @@ control_structure = {
     },
     "operation_file_params": {
         thinning_from_above: {
-            "thinning_limits": "data/parameter_files/Thin.txt"
+            "thinning_limits": "data/parameter_files/Thin_Keskinen_Suomi.txt"
         },
         cross_cut_felled_trees: {
             "timber_price_table": "data/parameter_files/timber_price_table.csv"
@@ -272,14 +272,14 @@ control_structure = {
             "timber_price_table": "data/parameter_files/timber_price_table.csv"
         },
         clearcutting: {
-            "clearcutting_limits_ages": "data/parameter_files/renewal_ages_southernFI.txt",
-            "clearcutting_limits_diameters": "data/parameter_files/renewal_diameters_southernFI.txt"
+            "clearcutting_limits_ages": "data/parameter_files/renewal_ages_centralFI.txt",
+            "clearcutting_limits_diameters": "data/parameter_files/renewal_diameters_centralFI.txt"
         },
         planting: {
             "planting_instructions": "data/parameter_files/planting_instructions.txt"
         },
         calculate_npv: {
-            "land_values": "data/parameter_files/land_values_per_site_type_and_interest_rate.json",
+            "land_values": "data/parameter_files/land_values_per_site_type_and_interest_rate_TS1200.json",
             "renewal_costs": "data/parameter_files/renewal_operation_pricing.csv"
         }
     },
