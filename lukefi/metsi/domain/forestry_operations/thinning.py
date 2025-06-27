@@ -132,6 +132,7 @@ def even_thinning(input_: OpTuple[ForestStand], /, **operation_parameters) -> Op
     thinning_limits = operation_parameters.get('thinning_limits', None)
 
     (lower_limit, upper_limit) = resolve_thinning_bounds(stand, thinning_limits)
+    upper_limit *= 0.9            # Loosen the thinning upper_limit that thinning alternatives occur earlier (10% lower threshold)
     upper_limit_reached = lambda: upper_limit < futil.overall_basal_area(stand.reference_trees)
     predicates = [upper_limit_reached]
 
