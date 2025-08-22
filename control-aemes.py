@@ -168,7 +168,7 @@ control_structure = {
                 "(cross_cutting.time_point == 5)]",
                 "harvest_10": "cross_cutting.volume_per_ha[(cross_cutting.source == 'harvested') & "
                 "(cross_cutting.time_point == 10)]",
-                "harvest_15": "cross_cutting.volume_per_ha[(cross_cutting.source == 'harvested') & "
+                "harvest_15": "cross_cutting.operation[(cross_cutting.source == 'harvested') & "
                 "(cross_cutting.time_point == 15)]",
                 "bm_stem_wood_0": "calculate_biomass.stem_wood[calculate_biomass.time_point == 0]",
                 "bm_stem_bark_0": "calculate_biomass.stem_bark[calculate_biomass.time_point == 0]",
