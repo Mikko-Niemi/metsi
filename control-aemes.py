@@ -48,6 +48,8 @@ control_structure = {
                 {sequence: [
                     cross_cut_standing_trees,
                     collect_standing_tree_properties,
+                    cross_cut_felled_trees,
+                    collect_felled_tree_properties,
                     calculate_npv,
                     calculate_biomass,
                     report_state
