@@ -97,7 +97,7 @@ def cross_cut_felled_trees(payload: OpTuple[ForestStand], /, **operation_paramet
     previous_cross_cutting_results = filter(lambda r: r.source == "harvested", previous_cross_cutting_results)
     previous_cross_cutting_results = list(map(lambda r: r.time_point, previous_cross_cutting_results))
     if len(previous_cross_cutting_results) == 0:
-        last_time = 0
+        last_time = -1
     else:
         last_time = max(previous_cross_cutting_results)
     felled_trees = filter(lambda x: x.time_point > last_time, collected_data.get_list_result("felled_trees"))
