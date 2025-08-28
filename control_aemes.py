@@ -87,7 +87,7 @@ control_structure = {
             ]
         },
         {
-            "time_points": [2025, 2030, 2035, 2040, 2045, 2050, 2055, 2060, 2065],
+            "time_points": [2024, 2025, 2029, 2030, 2035, 2040, 2045, 2050, 2055, 2060, 2065],
             "generators": [
                 {sequence: [calculate_biomass]}
             ]
