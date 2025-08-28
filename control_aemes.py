@@ -180,12 +180,38 @@ control_structure = {
                 "(cross_cutting.time_point == 2035)]",
                 "harvest_15": "cross_cutting.volume_per_ha[(cross_cutting.source == 'harvested') & "
                 "(cross_cutting.time_point == 2040)]",
-                "harvest_period_2030": "cross_cutting.volume_per_ha[(cross_cutting.source == 'harvested') & "
-                "(cross_cutting.time_point >= 2020) & (cross_cutting.time_point < 2030)]",
-                "harvest_period_2040": "cross_cutting.volume_per_ha[(cross_cutting.source == 'harvested') & "
-                "(cross_cutting.time_point >= 2030) & (cross_cutting.time_point < 2040)]",
-                "harvest_period_2050": "cross_cutting.volume_per_ha[(cross_cutting.source == 'harvested') & "
-                "(cross_cutting.time_point >= 2040) & (cross_cutting.time_point < 2050)]"
+                "bm_stem_wood_2024": "calculate_biomass.stem_wood[calculate_biomass.time_point == 2024]",
+                "bm_stem_bark_2024": "calculate_biomass.stem_bark[calculate_biomass.time_point == 2024]",
+                "bm_stem_waste_2024": "calculate_biomass.stem_waste[calculate_biomass.time_point == 2024]",
+                "bm_living_branches_2024": "calculate_biomass.living_branches[calculate_biomass.time_point == 2024]",
+                "bm_dead_branches_2024": "calculate_biomass.dead_branches[calculate_biomass.time_point == 2024]",
+                "bm_foliage_2024": "calculate_biomass.foliage[calculate_biomass.time_point == 2024]",
+                "bm_stumps_2024": "calculate_biomass.stumps[calculate_biomass.time_point == 2024]",
+                "bm_roots_2024": "calculate_biomass.roots[calculate_biomass.time_point == 2024]",
+                "bm_stem_wood_2025": "calculate_biomass.stem_wood[calculate_biomass.time_point == 2025]",
+                "bm_stem_bark_2025": "calculate_biomass.stem_bark[calculate_biomass.time_point == 2025]",
+                "bm_stem_waste_2025": "calculate_biomass.stem_waste[calculate_biomass.time_point == 2025]",
+                "bm_living_branches_2025": "calculate_biomass.living_branches[calculate_biomass.time_point == 2025]",
+                "bm_dead_branches_2025": "calculate_biomass.dead_branches[calculate_biomass.time_point == 2025]",
+                "bm_foliage_2025": "calculate_biomass.foliage[calculate_biomass.time_point == 2025]",
+                "bm_stumps_2025": "calculate_biomass.stumps[calculate_biomass.time_point == 2025]",
+                "bm_roots_2025": "calculate_biomass.roots[calculate_biomass.time_point == 2025]",
+                "bm_stem_wood_2029": "calculate_biomass.stem_wood[calculate_biomass.time_point == 2029]",
+                "bm_stem_bark_2029": "calculate_biomass.stem_bark[calculate_biomass.time_point == 2029]",
+                "bm_stem_waste_2029": "calculate_biomass.stem_waste[calculate_biomass.time_point == 2029]",
+                "bm_living_branches_2029": "calculate_biomass.living_branches[calculate_biomass.time_point == 2029]",
+                "bm_dead_branches_2029": "calculate_biomass.dead_branches[calculate_biomass.time_point == 2029]",
+                "bm_foliage_2029": "calculate_biomass.foliage[calculate_biomass.time_point == 2029]",
+                "bm_stumps_2029": "calculate_biomass.stumps[calculate_biomass.time_point == 2029]",
+                "bm_roots_2029": "calculate_biomass.roots[calculate_biomass.time_point == 2029]",
+                "bm_stem_wood_2030": "calculate_biomass.stem_wood[calculate_biomass.time_point == 2030]",
+                "bm_stem_bark_2030": "calculate_biomass.stem_bark[calculate_biomass.time_point == 2030]",
+                "bm_stem_waste_2030": "calculate_biomass.stem_waste[calculate_biomass.time_point == 2030]",
+                "bm_living_branches_2030": "calculate_biomass.living_branches[calculate_biomass.time_point == 2030]",
+                "bm_dead_branches_2030": "calculate_biomass.dead_branches[calculate_biomass.time_point == 2030]",
+                "bm_foliage_2030": "calculate_biomass.foliage[calculate_biomass.time_point == 2030]",
+                "bm_stumps_2030": "calculate_biomass.stumps[calculate_biomass.time_point == 2030]",
+                "bm_roots_2030": "calculate_biomass.roots[calculate_biomass.time_point == 2030]"
             }
         ],
         report_period: [
@@ -257,7 +283,15 @@ control_structure = {
             "xvariables": [
                 "identifier", "area", "npv_1_percent", "npv_2_percent", "npv_3_percent", "npv_4_percent", "npv_5_percent",
                 "stock_0", "stock_5", "stock_10", "stock_15","stock_20", "stock_25", "stock_30", "stock_35", "stock_40",
-                "harvest_0", "harvest_5", "harvest_10", "harvest_15"
+                "harvest_0", "harvest_5", "harvest_10", "harvest_15",
+                "bm_stem_wood_2024", "bm_stem_bark_2024", "bm_stem_waste_2024", "bm_living_branches_2024",
+                "bm_dead_branches_2024", "bm_foliage_2024", "bm_stumps_2024", "bm_roots_2024",
+                "bm_stem_wood_2025", "bm_stem_bark_2025", "bm_stem_waste_2025", "bm_living_branches_2025",
+                "bm_dead_branches_2025", "bm_foliage_2025", "bm_stumps_2025", "bm_roots_2025",
+                "bm_stem_wood_2029", "bm_stem_bark_2029", "bm_stem_waste_2029", "bm_living_branches_2029",
+                "bm_dead_branches_2029", "bm_foliage_2029", "bm_stumps_2029", "bm_roots_2029",
+                "bm_stem_wood_2030", "bm_stem_bark_2030", "bm_stem_waste_2030", "bm_living_branches_2030",
+                "bm_dead_branches_2030", "bm_foliage_2030", "bm_stumps_2030", "bm_roots_2030",
             ]
         },
         {
