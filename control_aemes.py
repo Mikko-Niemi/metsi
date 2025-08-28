@@ -107,7 +107,7 @@ control_structure = {
         {
             "time_points": [2025, 2030, 2035, 2040, 2045, 2050, 2055, 2060, 2065],
             "generators": [
-                {sequence: [grow_metsi]}
+                {sequence: [MetsiGrow.grow_metsi]}
             ]
         }
     ],
