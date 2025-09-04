@@ -87,6 +87,7 @@ def thinning_from_above(input_: OpTuple[ForestStand], /, **operation_parameters)
     stand.reference_trees.sort(key=lambda rt: rt.breast_height_diameter, reverse=True)
 
     (lower_limit, upper_limit) = resolve_thinning_bounds(stand, thinning_limits)
+    upper_limit *= 0.9            # Loosen the thinning upper_limit that thinning alternatives occur earlier (10% lower threshold)
 
     def upper_limit_reached():
         return upper_limit < futil.overall_basal_area(stand.reference_trees)
@@ -115,6 +116,7 @@ def thinning_from_below(input_: OpTuple[ForestStand], /, **operation_parameters)
     stand.reference_trees.sort(key=lambda rt: rt.breast_height_diameter)
 
     (lower_limit, upper_limit) = resolve_thinning_bounds(stand, thinning_limits)
+    upper_limit *= 0.9            # Loosen the thinning upper_limit that thinning alternatives occur earlier (10% lower threshold)
 
     def upper_limit_reached():
         return upper_limit < futil.overall_basal_area(stand.reference_trees)
@@ -141,6 +143,7 @@ def even_thinning(input_: OpTuple[ForestStand], /, **operation_parameters) -> Op
     thinning_limits = operation_parameters.get('thinning_limits', None)
 
     (lower_limit, upper_limit) = resolve_thinning_bounds(stand, thinning_limits)
+    upper_limit *= 0.9            # Loosen the thinning upper_limit that thinning alternatives occur earlier (10% lower threshold)
 
     def upper_limit_reached():
         return upper_limit < futil.overall_basal_area(stand.reference_trees)
