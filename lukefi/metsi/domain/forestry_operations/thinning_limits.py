@@ -492,11 +492,11 @@ def create_thinning_limits_table(file_path: str) -> list:
     with open(file_path, "r", encoding="utf-8") as f:
         contents = f.read()
     # read thinning_limits into a list of lists
-    table = contents.split('\n')
-    table = [row.split() for row in table]
-
-    # this function is based on the structure in data/parameter_files/Thin.txt.
-    # for now, to catch a file with a differing structure, raise an error if the row and column numbers do not match.
+    
+    # Split into rows and remove any empty rows
+    table = [row.split() for row in contents.split('\n') if row.strip()]
+    
+    # Validate structure
     if len(table) != 64 or len(table[0]) != 9:
         raise MetsiException('Thinning limits file has unexpected structure. Expected 64 rows and 9 columns, '
                              f'got {len(table)} rows and {len(table[0])} columns')
