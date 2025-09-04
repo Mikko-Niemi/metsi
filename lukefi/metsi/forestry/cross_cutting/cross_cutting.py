@@ -93,7 +93,9 @@ def cross_cut_py(timber_price_table, div=10) -> CrossCutFn:
         height = round(height)
         n = int((height * 100) / div - 1)
         T = stem_profile.create_tree_stem_profile(species_string, breast_height_diameter, height, n)
-        P = timber_price_table
+        species_map = {"pine": 1, "spruce": 2, "birch": 3}
+        species_code = species_map.get(species_string)
+        P = timber_price_table[timber_price_table[:, 0] == species_code][:, 1:]
         m = P.shape[0]
 
         return apteeraus_Nasberg(T, P, m, n, div)
