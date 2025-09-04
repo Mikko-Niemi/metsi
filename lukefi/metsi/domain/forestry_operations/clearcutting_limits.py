@@ -76,9 +76,11 @@ def create_clearcutting_limits_table(file_path: str) -> list:
     contents = None
     with open(file_path, "r", encoding="utf-8") as f:
         contents = f.read()
-    table = contents.split('\n')
-    table = [row.split() for row in table]
 
+    # Split into rows and remove any empty rows
+    table = [row.split() for row in contents.split('\n') if row.strip()]
+    
+    # Validate structure
     if len(table) != 4 or len(table[0]) != 5:
         raise MetsiException('Clearcutting limits file has unexpected structure. '
                              f'Expected 4 rows and 5 columns, got {len(table)} rows and {len(table[0])} columns')
