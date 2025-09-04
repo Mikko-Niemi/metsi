@@ -37,11 +37,13 @@ def create_planting_instructions_table(file_path: str) -> list:
     contents = None
     with open(file_path, "r", encoding="utf-8") as f:
         contents = f.read()
-    table = contents.split('\n')
-    table = [row.split() for row in table]
 
+    # Split into rows and remove any empty rows
+    table = [row.split() for row in contents.split('\n') if row.strip()]
+    
+    # Validate structure
     if len(table) != 4 or len(table[0]) != 3:
-        raise MetsiException("Planting instructions file has unexpected structure. Expected 4 rows and 5 columns, "
+        raise MetsiException("Planting instructions file has unexpected structure. Expected 4 rows and 3 columns, "
                              f"got {len(table)} rows and {len(table[0])} columns")
     return table
 
