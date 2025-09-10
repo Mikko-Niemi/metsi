@@ -116,7 +116,7 @@ control_structure = {
             {
                 "thinning_factor": 0.97,
                 "e": 0.2,
-                "dominant_height_lower_bound": 11,
+                "dominant_height_lower_bound": 12,
                 "dominant_height_upper_bound": 16
             }
         ],
